@@ -30,11 +30,11 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
 
     func initializeTheCategoires() {
         self.songs = [
-            Song(name:"Celebrate", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
+            Song(name:"Celebrate", url: "https://www.youtube.com/watch?v=hGvJvbtrsUo"),
             Song(name:"ultraJapan", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
-            Song(name:"Summer Madness", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
+            Song(name:"Summer Madness", url: "https://www.youtube.com/watch?v=hGvJvbtrsUo"),
             Song(name:"Tonight", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
-            Song(name:"Blue", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
+            Song(name:"Blue", url: "https://www.youtube.com/watch?v=hGvJvbtrsUo"),
             Song(name:"Bad Romance", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
             Song(name:"Baby Baby", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk")
         ]
