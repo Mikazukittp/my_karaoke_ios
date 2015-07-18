@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryListViewController" customModule="My_Karaoke" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="AWL-ie-8qv" id="z3s-Ja-J25"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,12 +15,22 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AWL-ie-8qv">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AWL-ie-8qv">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="p1w-eE-46b"/>
+                        <outlet property="delegate" destination="-1" id="Ees-90-RNf"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="AWL-ie-8qv" secondAttribute="trailing" id="0bg-uI-5ww"/>
+                <constraint firstAttribute="bottom" secondItem="AWL-ie-8qv" secondAttribute="bottom" id="csE-fi-goC"/>
+                <constraint firstItem="AWL-ie-8qv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jEO-yw-0k3"/>
+                <constraint firstItem="AWL-ie-8qv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xf4-FQ-Wuc"/>
+            </constraints>
         </view>
     </objects>
 </document>

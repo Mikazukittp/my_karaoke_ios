@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326E32D1B5A3E8C00925579 /* DetailViewController.swift */; };
+		8326E3301B5A3E8C00925579 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8326E32E1B5A3E8C00925579 /* DetailViewController.xib */; };
 		83BB8D6C1B5A195A00C97B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D6B1B5A195A00C97B32 /* AppDelegate.swift */; };
 		83BB8D731B5A195A00C97B32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8D721B5A195A00C97B32 /* Images.xcassets */; };
 		83BB8D821B5A195A00C97B32 /* My_KaraokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D811B5A195A00C97B32 /* My_KaraokeTests.swift */; };
-		83BB8D911B5A1A2900C97B32 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D8F1B5A1A2900C97B32 /* CategoryListViewController.swift */; };
-		83BB8D921B5A1A2900C97B32 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8D901B5A1A2900C97B32 /* CategoryListViewController.xib */; };
+		83BB8D951B5A285400C97B32 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D941B5A285400C97B32 /* Category.swift */; };
+		83BB8D9B1B5A2FDD00C97B32 /* CategoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D9A1B5A2FDD00C97B32 /* CategoryTableCell.swift */; };
+		83BB8DA01B5A30C700C97B32 /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D9E1B5A30C700C97B32 /* CategoryListViewController.swift */; };
+		83BB8DA11B5A30C700C97B32 /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8D9F1B5A30C700C97B32 /* CategoryListViewController.xib */; };
+		83BB8DA71B5A337500C97B32 /* CategoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8DA61B5A337500C97B32 /* CategoryTableCell.xib */; };
+		83BB8DAB1B5A37D000C97B32 /* SongTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8DAA1B5A37D000C97B32 /* SongTableCell.xib */; };
+		83BB8DAE1B5A384F00C97B32 /* SongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DAC1B5A384F00C97B32 /* SongListViewController.swift */; };
+		83BB8DAF1B5A384F00C97B32 /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */; };
+		83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DB01B5A38F200C97B32 /* Song.swift */; };
+		83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8326E32D1B5A3E8C00925579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8326E32E1B5A3E8C00925579 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		83BB8D661B5A195A00C97B32 /* My Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB8D6A1B5A195A00C97B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83BB8D6B1B5A195A00C97B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,8 +44,16 @@
 		83BB8D7B1B5A195A00C97B32 /* My KaraokeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My KaraokeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB8D801B5A195A00C97B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83BB8D811B5A195A00C97B32 /* My_KaraokeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_KaraokeTests.swift; sourceTree = "<group>"; };
-		83BB8D8F1B5A1A2900C97B32 /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
-		83BB8D901B5A1A2900C97B32 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		83BB8D941B5A285400C97B32 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		83BB8D9A1B5A2FDD00C97B32 /* CategoryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableCell.swift; sourceTree = "<group>"; };
+		83BB8D9E1B5A30C700C97B32 /* CategoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		83BB8D9F1B5A30C700C97B32 /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		83BB8DA61B5A337500C97B32 /* CategoryTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableCell.xib; sourceTree = "<group>"; };
+		83BB8DAA1B5A37D000C97B32 /* SongTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongTableCell.xib; sourceTree = "<group>"; };
+		83BB8DAC1B5A384F00C97B32 /* SongListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongListViewController.swift; sourceTree = "<group>"; };
+		83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
+		83BB8DB01B5A38F200C97B32 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +99,8 @@
 				83BB8D8E1B5A1A0200C97B32 /* Common */,
 				83BB8D8D1B5A19F900C97B32 /* Util */,
 				83BB8D8C1B5A19F000C97B32 /* Model */,
-				83BB8D8B1B5A19DD00C97B32 /* Controller */,
+				83BB8D981B5A2F6100C97B32 /* VIew */,
+				83BB8DA21B5A30CD00C97B32 /* Controller */,
 				83BB8D721B5A195A00C97B32 /* Images.xcassets */,
 				83BB8D691B5A195A00C97B32 /* Supporting Files */,
 			);
@@ -111,18 +132,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		83BB8D8B1B5A19DD00C97B32 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				83BB8D8F1B5A1A2900C97B32 /* CategoryListViewController.swift */,
-				83BB8D901B5A1A2900C97B32 /* CategoryListViewController.xib */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
 		83BB8D8C1B5A19F000C97B32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83BB8D931B5A27A800C97B32 /* Entity */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -139,6 +152,47 @@
 			children = (
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		83BB8D931B5A27A800C97B32 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				83BB8D941B5A285400C97B32 /* Category.swift */,
+				83BB8DB01B5A38F200C97B32 /* Song.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		83BB8D981B5A2F6100C97B32 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				83BB8D991B5A2F7000C97B32 /* Cell */,
+			);
+			name = VIew;
+			sourceTree = "<group>";
+		};
+		83BB8D991B5A2F7000C97B32 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				83BB8D9A1B5A2FDD00C97B32 /* CategoryTableCell.swift */,
+				83BB8DA61B5A337500C97B32 /* CategoryTableCell.xib */,
+				83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */,
+				83BB8DAA1B5A37D000C97B32 /* SongTableCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		83BB8DA21B5A30CD00C97B32 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83BB8D9E1B5A30C700C97B32 /* CategoryListViewController.swift */,
+				83BB8D9F1B5A30C700C97B32 /* CategoryListViewController.xib */,
+				83BB8DAC1B5A384F00C97B32 /* SongListViewController.swift */,
+				83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */,
+				8326E32D1B5A3E8C00925579 /* DetailViewController.swift */,
+				8326E32E1B5A3E8C00925579 /* DetailViewController.xib */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +275,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83BB8D921B5A1A2900C97B32 /* CategoryListViewController.xib in Resources */,
+				83BB8DAF1B5A384F00C97B32 /* SongListViewController.xib in Resources */,
+				8326E3301B5A3E8C00925579 /* DetailViewController.xib in Resources */,
+				83BB8DA11B5A30C700C97B32 /* CategoryListViewController.xib in Resources */,
+				83BB8DAB1B5A37D000C97B32 /* SongTableCell.xib in Resources */,
+				83BB8DA71B5A337500C97B32 /* CategoryTableCell.xib in Resources */,
 				83BB8D731B5A195A00C97B32 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +298,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83BB8D911B5A1A2900C97B32 /* CategoryListViewController.swift in Sources */,
+				83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */,
+				83BB8DA01B5A30C700C97B32 /* CategoryListViewController.swift in Sources */,
 				83BB8D6C1B5A195A00C97B32 /* AppDelegate.swift in Sources */,
+				83BB8D951B5A285400C97B32 /* Category.swift in Sources */,
+				83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */,
+				83BB8D9B1B5A2FDD00C97B32 /* CategoryTableCell.swift in Sources */,
+				83BB8DAE1B5A384F00C97B32 /* SongListViewController.swift in Sources */,
+				8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +484,7 @@
 				83BB8D871B5A195A00C97B32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83BB8D881B5A195A00C97B32 /* Build configuration list for PBXNativeTarget "My KaraokeTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +493,7 @@
 				83BB8D8A1B5A195A00C97B32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
