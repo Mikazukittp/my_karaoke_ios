@@ -24,7 +24,6 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
         var nib  = UINib(nibName: "CategoryTableCell", bundle:nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier:"CategoryTableCell")
         
-        
         initializeTheCategoires()
     }
 
@@ -88,8 +87,6 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
         pc.category = categories[indexPath.row].id
         
         self.navigationController?.pushViewController(pc, animated: true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
     }
 
 }

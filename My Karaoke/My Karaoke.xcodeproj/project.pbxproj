@@ -22,6 +22,9 @@
 		83BB8DAF1B5A384F00C97B32 /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */; };
 		83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DB01B5A38F200C97B32 /* Song.swift */; };
 		83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */; };
+		83E5DDA41B5BD42800189D64 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5DDA21B5BD42800189D64 /* RegistViewController.swift */; };
+		83E5DDA51B5BD42800189D64 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E5DDA31B5BD42800189D64 /* RegistViewController.xib */; };
+		83E5DDA71B5BE56F00189D64 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5DDA61B5BE56F00189D64 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
 		83BB8DB01B5A38F200C97B32 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableCell.swift; sourceTree = "<group>"; };
+		83E5DDA21B5BD42800189D64 /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
+		83E5DDA31B5BD42800189D64 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
+		83E5DDA61B5BE56F00189D64 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,7 @@
 		83BB8D8E1B5A1A0200C97B32 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				83E5DDA61B5BE56F00189D64 /* Const.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 		83BB8DA21B5A30CD00C97B32 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				83E5DDA21B5BD42800189D64 /* RegistViewController.swift */,
+				83E5DDA31B5BD42800189D64 /* RegistViewController.xib */,
 				83BB8D9E1B5A30C700C97B32 /* CategoryListViewController.swift */,
 				83BB8D9F1B5A30C700C97B32 /* CategoryListViewController.xib */,
 				83BB8DAC1B5A384F00C97B32 /* SongListViewController.swift */,
@@ -279,6 +288,7 @@
 				8326E3301B5A3E8C00925579 /* DetailViewController.xib in Resources */,
 				83BB8DA11B5A30C700C97B32 /* CategoryListViewController.xib in Resources */,
 				83BB8DAB1B5A37D000C97B32 /* SongTableCell.xib in Resources */,
+				83E5DDA51B5BD42800189D64 /* RegistViewController.xib in Resources */,
 				83BB8DA71B5A337500C97B32 /* CategoryTableCell.xib in Resources */,
 				83BB8D731B5A195A00C97B32 /* Images.xcassets in Resources */,
 			);
@@ -300,12 +310,14 @@
 			files = (
 				83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */,
 				83BB8DA01B5A30C700C97B32 /* CategoryListViewController.swift in Sources */,
+				83E5DDA41B5BD42800189D64 /* RegistViewController.swift in Sources */,
 				83BB8D6C1B5A195A00C97B32 /* AppDelegate.swift in Sources */,
 				83BB8D951B5A285400C97B32 /* Category.swift in Sources */,
 				83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */,
 				83BB8D9B1B5A2FDD00C97B32 /* CategoryTableCell.swift in Sources */,
 				83BB8DAE1B5A384F00C97B32 /* SongListViewController.swift in Sources */,
 				8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */,
+				83E5DDA71B5BE56F00189D64 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

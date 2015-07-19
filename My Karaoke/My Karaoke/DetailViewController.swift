@@ -18,7 +18,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = "YouTube Movie"
         
-        
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         

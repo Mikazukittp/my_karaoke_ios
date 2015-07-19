@@ -20,7 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let win = window {
             win.opaque = true
             
-            var vc = CategoryListViewController(nibName: "CategoryListViewController", bundle: nil)
+            let ud = NSUserDefaults.standardUserDefaults()
+            var userId : AnyObject! = ud.objectForKey(Const.userId)
+
+            var vc: UIViewController
+            if userId == nil {
+                vc = RegistViewController(nibName: "RegistViewController", bundle: nil)
+            } else {
+                vc = CategoryListViewController(nibName: "CategoryListViewController", bundle: nil)
+            }
             
             var nc = UINavigationController(rootViewController: vc)
             win.rootViewController = nc
