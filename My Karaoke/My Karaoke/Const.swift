@@ -13,8 +13,18 @@ class Const {
     class var userName: String {
         return "userName"
     }
-    class var userId: String {
-        return "userId"
+    class var userToken: String {
+        return "userToken"
+    }
+    class var genderId :String {
+        return "genderId"
+    }
+    class var generationId :String {
+        return "generationId"
+    }
+    
+    class var urlDomain: String {
+        return "http://52.69.210.152/"
     }
     
 //    class var constInt: Int {

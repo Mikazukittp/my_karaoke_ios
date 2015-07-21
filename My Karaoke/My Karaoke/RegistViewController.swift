@@ -10,7 +10,10 @@ import UIKit
 
 class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDelegate{
 
-    var num = ["10代", "20代", "30代", "40代"]
+    let generateStr = ["10代", "20代", "30代"]
+    let generateValue = [1,2,3]
+    var userGenerateValue :Int?
+    
     var toolBar: UIToolbar!
     
     @IBOutlet weak var userNameTextInput: UITextField!
@@ -23,6 +26,12 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         self.edgesForExtendedLayout = UIRectEdge.None
         
         self.title = "My Karaoke"
+        
+        let _singleTap = UITapGestureRecognizer(target: self, action: "screenTapped:");
+        _singleTap.numberOfTapsRequired = 1;
+        view.addGestureRecognizer(_singleTap);
+
+        
         
         var pickerView = UIPickerView()
         pickerView.showsSelectionIndicator = true
@@ -48,13 +57,14 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         return 1
     }
     func pickerView(pickerView: UIPickerView!, numberOfRowsInComponent component: Int) -> Int {
-        return num.count
+        return generateStr.count
     }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return num[row]
+        return generateStr[row]
     }
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        userGenerationInput.text = num[row]
+        self.userGenerateValue = generateValue[row]
+        userGenerationInput.text = generateStr[row]
     }
     
     func tappedToolBarBtn(sender: UIBarButtonItem) {
@@ -64,9 +74,33 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
     
     @IBAction func registButtonTapped(sender: AnyObject) {
         
-        var pc = CategoryListViewController(nibName: "CategoryListViewController", bundle: nil)
+        let ud = NSUserDefaults.standardUserDefaults()
+        var userId : AnyObject! = ud.objectForKey(Const.userToken)
         
-        self.navigationController?.pushViewController(pc, animated: true)
+        if userId == nil {
+            
+            let fetcher = RegistFetcher()
+            fetcher.regist(userNameTextInput.text, userSex: userStatusBar.selectedSegmentIndex + 1, userGeneration: userGenerateValue!, successBlock: { () -> Void in
+                
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    var pc = CategoryListViewController(nibName: "CategoryListViewController", bundle: nil)
+                    self.navigationController?.pushViewController(pc, animated: true)
+                })
+                
+                }) { (error) -> Void in
+                    
+            }
+        } else {
+            var pc = CategoryListViewController(nibName: "CategoryListViewController", bundle: nil)
+            self.navigationController?.pushViewController(pc, animated: true)
+        }
 
+    }
+    
+    
+    func screenTapped (recognizer:UIPanGestureRecognizer){
+        self.userGenerationInput.resignFirstResponder()
+        self.userNameTextInput.resignFirstResponder()
     }
 }

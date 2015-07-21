@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             win.opaque = true
             
             let ud = NSUserDefaults.standardUserDefaults()
-            var userId : AnyObject! = ud.objectForKey(Const.userId)
+            var userId : AnyObject! = ud.objectForKey(Const.userToken)
 
             var vc: UIViewController
             if userId == nil {

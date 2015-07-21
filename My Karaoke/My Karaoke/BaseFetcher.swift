@@ -9,5 +9,22 @@
 import UIKit
 
 class BaseFetcher: NSObject {
-   
+  
+    func sendAsynchronousByUrl(request :NSURLRequest ,completion:(items :NSDictionary)->Void) {
+        let session = NSURLSession.sharedSession()
+        let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                println(error)
+            } else {                
+                let json:NSDictionary = (NSJSONSerialization.JSONObjectWithData(data,
+                    options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary)!
+                println(json)
+                completion(items: json)
+            }
+        })
+        
+        dataTask.resume()
+    }
+    
 }
+
