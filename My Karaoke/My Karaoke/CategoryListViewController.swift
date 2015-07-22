@@ -50,10 +50,7 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
             cell = CategoryTableCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
         }
         
-        //cell!.backgroundColor = UIColor.orangeColor()
         cell!.nameLabel!.text = categories[indexPath.row].name
-//        cell!.thumbnailImageView!.image = UIImage(named:categories[indexPath.row].thumbnails)
-//        cell!.prepTimeLabel!.text = categories[indexPath.row].prepTime
         
         return cell!
     }

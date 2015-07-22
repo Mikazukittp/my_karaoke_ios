@@ -18,7 +18,7 @@ class CategoryFetcher: BaseFetcher {
             let genderId = ud.objectForKey(Const.genderId) as? Int
             let generationId = ud.objectForKey(Const.generationId) as? Int
             
-            var getParam:String = "?generation_id=\(generationId)&gender_id=\(genderId)"
+            var getParam:String = "?generation_id=\(generationId!)&gender_id=\(genderId!)"
 
             var request = NSMutableURLRequest(URL: NSURL(string: Const.urlDomain + "api/v1/categories" + getParam)!,
                 cachePolicy: .UseProtocolCachePolicy,
