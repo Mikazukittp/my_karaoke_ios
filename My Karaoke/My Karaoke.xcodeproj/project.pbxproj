@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326E32D1B5A3E8C00925579 /* DetailViewController.swift */; };
 		8326E3301B5A3E8C00925579 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8326E32E1B5A3E8C00925579 /* DetailViewController.xib */; };
+		83B4B65B1B5FE10E0095769E /* SongFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4B65A1B5FE10E0095769E /* SongFetcher.swift */; };
 		83BB8D6C1B5A195A00C97B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D6B1B5A195A00C97B32 /* AppDelegate.swift */; };
 		83BB8D731B5A195A00C97B32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8D721B5A195A00C97B32 /* Images.xcassets */; };
 		83BB8D821B5A195A00C97B32 /* My_KaraokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D811B5A195A00C97B32 /* My_KaraokeTests.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		8326E32D1B5A3E8C00925579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8326E32E1B5A3E8C00925579 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		83B4B65A1B5FE10E0095769E /* SongFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongFetcher.swift; sourceTree = "<group>"; };
 		83BB8D661B5A195A00C97B32 /* My Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB8D6A1B5A195A00C97B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83BB8D6B1B5A195A00C97B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				83E56C3A1B5E9CCB003DE02E /* BaseFetcher.swift */,
 				83E56C3C1B5E9CD3003DE02E /* CategoryFetcher.swift */,
 				83E56C3E1B5E9CDC003DE02E /* RegistFetcher.swift */,
+				83B4B65A1B5FE10E0095769E /* SongFetcher.swift */,
 			);
 			name = Fetcher;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B4B65B1B5FE10E0095769E /* SongFetcher.swift in Sources */,
 				83E56C3B1B5E9CCB003DE02E /* BaseFetcher.swift in Sources */,
 				83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */,
 				83BB8DA01B5A30C700C97B32 /* CategoryListViewController.swift in Sources */,

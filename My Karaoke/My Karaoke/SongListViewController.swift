@@ -29,16 +29,16 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
     }
 
     func initializeTheCategoires() {
-        self.songs = [
-            Song(name:"Celebrate", url: "https://www.youtube.com/watch?v=hGvJvbtrsUo"),
-            Song(name:"ultraJapan", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
-            Song(name:"Summer Madness", url: "https://www.youtube.com/watch?v=hGvJvbtrsUo"),
-            Song(name:"Tonight", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
-            Song(name:"Blue", url: "https://www.youtube.com/watch?v=hGvJvbtrsUo"),
-            Song(name:"Bad Romance", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk"),
-            Song(name:"Baby Baby", url: "https://www.youtube.com/watch?v=pyDYtaXSuFk")
-        ]
-    }
+        let fetcher = SongFetcher()
+        fetcher.list(category, successBlock: { (items) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.songs = items
+                self.tableView.reloadData()
+            })
+        }) { (error) -> Void in
+            
+        }
+}
 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,7 +50,7 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
             cell = SongTableCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
         }
         
-        cell!.nameLabel!.text = songs[indexPath.row].name
+        cell!.nameLabel!.text = songs[indexPath.row].title
         
         return cell!
     }

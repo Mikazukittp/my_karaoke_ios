@@ -10,14 +10,14 @@ import UIKit
 
 class BaseFetcher: NSObject {
   
-    func sendAsynchronousByUrl(request :NSURLRequest ,completion:(items :NSDictionary)->Void) {
+    func sendAsynchronousByUrl(request :NSURLRequest ,completion:(items :AnyObject)->Void) {
         let session = NSURLSession.sharedSession()
         let dataTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
                 println(error)
             } else {                
-                let json:NSDictionary = (NSJSONSerialization.JSONObjectWithData(data,
-                    options: NSJSONReadingOptions.AllowFragments, error: nil) as? NSDictionary)!
+                let json: AnyObject = NSJSONSerialization.JSONObjectWithData(data,
+                    options: NSJSONReadingOptions.AllowFragments, error: nil)!
                 println(json)
                 completion(items: json)
             }

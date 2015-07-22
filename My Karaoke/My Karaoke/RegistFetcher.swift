@@ -27,9 +27,11 @@ class RegistFetcher: BaseFetcher {
       
         self.sendAsynchronousByUrl(request) { (items) -> Void in
             
+            let dict = items as? NSDictionary
+            
             let ud = NSUserDefaults.standardUserDefaults()
 
-            if let userToken: String = items.objectForKey("token") as? String {
+            if let userToken: String = dict?.objectForKey("token") as? String {
                 ud.setObject(userName, forKey: Const.userName)
                 ud.setObject(userGeneration, forKey: Const.generationId)
                 ud.setObject(userSex, forKey: Const.genderId)
