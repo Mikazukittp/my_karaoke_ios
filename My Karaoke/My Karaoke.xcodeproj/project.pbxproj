@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326E32D1B5A3E8C00925579 /* DetailViewController.swift */; };
 		8326E3301B5A3E8C00925579 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8326E32E1B5A3E8C00925579 /* DetailViewController.xib */; };
+		83B4B65B1B5FE10E0095769E /* SongFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4B65A1B5FE10E0095769E /* SongFetcher.swift */; };
 		83BB8D6C1B5A195A00C97B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D6B1B5A195A00C97B32 /* AppDelegate.swift */; };
 		83BB8D731B5A195A00C97B32 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8D721B5A195A00C97B32 /* Images.xcassets */; };
 		83BB8D821B5A195A00C97B32 /* My_KaraokeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8D811B5A195A00C97B32 /* My_KaraokeTests.swift */; };
@@ -22,6 +23,9 @@
 		83BB8DAF1B5A384F00C97B32 /* SongListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */; };
 		83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DB01B5A38F200C97B32 /* Song.swift */; };
 		83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */; };
+		83E56C3B1B5E9CCB003DE02E /* BaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E56C3A1B5E9CCB003DE02E /* BaseFetcher.swift */; };
+		83E56C3D1B5E9CD3003DE02E /* CategoryFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E56C3C1B5E9CD3003DE02E /* CategoryFetcher.swift */; };
+		83E56C3F1B5E9CDD003DE02E /* RegistFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E56C3E1B5E9CDC003DE02E /* RegistFetcher.swift */; };
 		83E5DDA41B5BD42800189D64 /* RegistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5DDA21B5BD42800189D64 /* RegistViewController.swift */; };
 		83E5DDA51B5BD42800189D64 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E5DDA31B5BD42800189D64 /* RegistViewController.xib */; };
 		83E5DDA71B5BE56F00189D64 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5DDA61B5BE56F00189D64 /* Const.swift */; };
@@ -40,6 +44,7 @@
 /* Begin PBXFileReference section */
 		8326E32D1B5A3E8C00925579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8326E32E1B5A3E8C00925579 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		83B4B65A1B5FE10E0095769E /* SongFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongFetcher.swift; sourceTree = "<group>"; };
 		83BB8D661B5A195A00C97B32 /* My Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83BB8D6A1B5A195A00C97B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83BB8D6B1B5A195A00C97B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,9 @@
 		83BB8DAD1B5A384F00C97B32 /* SongListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongListViewController.xib; sourceTree = "<group>"; };
 		83BB8DB01B5A38F200C97B32 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		83BB8DB21B5A3B1C00C97B32 /* SongTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableCell.swift; sourceTree = "<group>"; };
+		83E56C3A1B5E9CCB003DE02E /* BaseFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFetcher.swift; sourceTree = "<group>"; };
+		83E56C3C1B5E9CD3003DE02E /* CategoryFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFetcher.swift; sourceTree = "<group>"; };
+		83E56C3E1B5E9CDC003DE02E /* RegistFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistFetcher.swift; sourceTree = "<group>"; };
 		83E5DDA21B5BD42800189D64 /* RegistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistViewController.swift; sourceTree = "<group>"; };
 		83E5DDA31B5BD42800189D64 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		83E5DDA61B5BE56F00189D64 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -141,6 +149,7 @@
 		83BB8D8C1B5A19F000C97B32 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83E56C391B5E9CC3003DE02E /* Fetcher */,
 				83BB8D931B5A27A800C97B32 /* Entity */,
 			);
 			name = Model;
@@ -202,6 +211,17 @@
 				8326E32E1B5A3E8C00925579 /* DetailViewController.xib */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		83E56C391B5E9CC3003DE02E /* Fetcher */ = {
+			isa = PBXGroup;
+			children = (
+				83E56C3A1B5E9CCB003DE02E /* BaseFetcher.swift */,
+				83E56C3C1B5E9CD3003DE02E /* CategoryFetcher.swift */,
+				83E56C3E1B5E9CDC003DE02E /* RegistFetcher.swift */,
+				83B4B65A1B5FE10E0095769E /* SongFetcher.swift */,
+			);
+			name = Fetcher;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,12 +328,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B4B65B1B5FE10E0095769E /* SongFetcher.swift in Sources */,
+				83E56C3B1B5E9CCB003DE02E /* BaseFetcher.swift in Sources */,
 				83BB8DB11B5A38F200C97B32 /* Song.swift in Sources */,
 				83BB8DA01B5A30C700C97B32 /* CategoryListViewController.swift in Sources */,
 				83E5DDA41B5BD42800189D64 /* RegistViewController.swift in Sources */,
 				83BB8D6C1B5A195A00C97B32 /* AppDelegate.swift in Sources */,
 				83BB8D951B5A285400C97B32 /* Category.swift in Sources */,
+				83E56C3F1B5E9CDD003DE02E /* RegistFetcher.swift in Sources */,
 				83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */,
+				83E56C3D1B5E9CD3003DE02E /* CategoryFetcher.swift in Sources */,
 				83BB8D9B1B5A2FDD00C97B32 /* CategoryTableCell.swift in Sources */,
 				83BB8DAE1B5A384F00C97B32 /* SongListViewController.swift in Sources */,
 				8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */,

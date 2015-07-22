@@ -9,6 +9,7 @@
 import Foundation
 
 struct Song {
-    let name: String
-    let url: String
+    let title: String
+    let id: Int
+    let like: Int
 }

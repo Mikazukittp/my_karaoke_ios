@@ -28,23 +28,17 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
     }
 
     func initializeTheCategoires() {
-        self.categories = [
-            Category(name: "Egg Benedict", id: 1),
-            Category(name: "Mushroom Risotto", id: 2),
-            Category(name: "Full Breakfast", id: 3),
-            Category(name: "Hamburger", id: 4),
-            Category(name: "Ham and Egg Sandwich", id: 5),
-            Category(name: "Creme Brelee", id: 6),
-            Category(name: "White Chocolate Donut", id: 7),
-            Category(name: "Starbucks Coffee", id: 8),
-            Category(name: "Vegetable Curry", id: 9),
-            Category(name: "Instant Noodle with Egg", id: 10),
-            Category(name: "Noodle with BBQ Pork", id: 11),
-            Category(name: "Japanese Noodle with Pork", id: 12),
-            Category(name: "Green Tea", id: 13),
-            Category(name: "Thai Shrimp Cake", id: 14),
-            Category(name: "Angry Birds Cake", id: 15),
-            Category(name: "Ham and Cheese Panini", id: 16)]
+       let fetcher = CategoryFetcher()
+        fetcher.list({ (items) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.categories = items
+                self.tableView.reloadData()
+            })
+            
+        }, failedBlock: { (error) -> Void in
+            
+        })
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
