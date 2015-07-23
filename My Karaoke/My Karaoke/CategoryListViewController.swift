@@ -25,11 +25,13 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Category"
+        self.title = "My Karaoke"
         
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
         
         //cellの登録
         var nib  = UINib(nibName: "CategoryTableCell", bundle:nil)
@@ -148,6 +150,7 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var pc = SongListViewController(nibName: "SongListViewController", bundle: nil)
         pc.category = categories[indexPath.row].id
+        pc.categoryName = categories[indexPath.row].name
         
         self.navigationController?.pushViewController(pc, animated: true)
     }

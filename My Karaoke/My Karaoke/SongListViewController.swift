@@ -12,15 +12,18 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
 
     var songs = [Song]()
     var category = Int()
+    var categoryName :String!
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Songs"
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+
+        self.title = categoryName
         
         var nib  = UINib(nibName: "SongTableCell", bundle:nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier:"SongTableCell")

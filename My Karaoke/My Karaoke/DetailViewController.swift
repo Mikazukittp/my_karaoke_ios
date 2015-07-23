@@ -24,6 +24,9 @@ class DetailViewController: UIViewController {
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+        
         self.indicatorStart()
         
         let fetcher = SongDetailFetcher()

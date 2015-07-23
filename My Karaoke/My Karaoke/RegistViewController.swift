@@ -25,7 +25,7 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        self.title = "My Karaoke"
+        self.title = "ユーザ登録"
         
         let _singleTap = UITapGestureRecognizer(target: self, action: "screenTapped:");
         _singleTap.numberOfTapsRequired = 1;
