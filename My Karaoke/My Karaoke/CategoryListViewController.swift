@@ -13,6 +13,7 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var generationTextInput: UITextField!
     @IBOutlet weak var generateStatus: UISegmentedControl!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     var categories = [Category]()
     let generateStr = ["10代", "20代", "30代"]
@@ -72,16 +73,22 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
     
     func initializeTheCategoires() {
         
+        self.indicatorStart()
+        
         let fetcher = CategoryFetcher()
         fetcher.list({ (items) -> Void in
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.categories = items
                 self.tableView.reloadData()
+                self.indicatorStop()
             })
             
             }, failedBlock: { (error) -> Void in
                 
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.indicatorStop()
+                })
         })
     }
     
@@ -144,6 +151,16 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
         
         self.navigationController?.pushViewController(pc, animated: true)
     }
+    
+    private func indicatorStart () {
+        self.indicator.hidden = false
+        self.indicator.startAnimating()
+    }
+    private func indicatorStop () {
+        self.indicator.hidden = true
+        self.indicator.stopAnimating()
+    }
+    
     
     @IBAction func searchButtonTapped(sender: AnyObject) {
         let ud = NSUserDefaults.standardUserDefaults()

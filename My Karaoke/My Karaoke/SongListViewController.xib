@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SongListViewController" customModule="My_Karaoke" customModuleProvider="target">
             <connections>
+                <outlet property="indicator" destination="FNg-z0-TJe" id="am2-LL-eio"/>
                 <outlet property="tableView" destination="FHX-sX-tWS" id="j7Z-0E-YyU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,8 +24,15 @@
                         <outlet property="delegate" destination="-1" id="q0k-Xs-am9"/>
                     </connections>
                 </tableView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FNg-z0-TJe">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="FNg-z0-TJe" secondAttribute="centerX" id="Gbn-IL-jFs"/>
+                <constraint firstAttribute="centerY" secondItem="FNg-z0-TJe" secondAttribute="centerY" id="K0b-Ng-tGa"/>
+            </constraints>
         </view>
     </objects>
 </document>
