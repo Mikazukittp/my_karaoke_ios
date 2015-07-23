@@ -9,7 +9,7 @@
 import UIKit
 
 class CategoryListViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate,UIToolbarDelegate{
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var generationTextInput: UITextField!
     @IBOutlet weak var generateStatus: UISegmentedControl!
@@ -19,21 +19,21 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
     let generateValue = [1,2,3]
     var userGenerateValue :Int?
     var toolBar: UIToolbar!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.title = "Category"
         
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
-
+        
         
         //cellの登録
         var nib  = UINib(nibName: "CategoryTableCell", bundle:nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier:"CategoryTableCell")
-
+        
         var pickerView = UIPickerView()
         pickerView.showsSelectionIndicator = true
         pickerView.delegate = self
@@ -52,21 +52,24 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
         
         generationTextInput.inputAccessoryView = toolBar
         
-        initializeUserStatus()
-        initializeTheCategoires()
+        let ud = NSUserDefaults.standardUserDefaults()
+        
+        userGenerateValue = ud.objectForKey(Const.generationId) as? Int
+        let genderId = ud.objectForKey(Const.genderId) as? Int
+        
+        if userGenerateValue != nil && genderId != nil {
+            initializeUserStatus(userGenerateValue!,genderId :genderId!)
+            initializeTheCategoires()
+        }
+        
     }
     
-    func initializeUserStatus () {
-        let ud = NSUserDefaults.standardUserDefaults()
-
-        let generationId = ud.objectForKey(Const.generationId) as? Int
-        let generation = generateStr[generationId! - 1]
+    func initializeUserStatus (generationId :Int ,genderId: Int) {
+        let generation = generateStr[generationId - 1]
         generationTextInput.text = generation
-
-        let genderId = ud.objectForKey(Const.genderId) as? Int
-        generateStatus.selectedSegmentIndex = genderId!
+        generateStatus.selectedSegmentIndex = genderId - 1
     }
-
+    
     func initializeTheCategoires() {
         
         let fetcher = CategoryFetcher()
@@ -77,8 +80,8 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
                 self.tableView.reloadData()
             })
             
-        }, failedBlock: { (error) -> Void in
-            
+            }, failedBlock: { (error) -> Void in
+                
         })
     }
     
@@ -99,7 +102,7 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
     func tappedToolBarBtn(sender: UIBarButtonItem) {
         generationTextInput.resignFirstResponder()
     }
-
+    
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -141,13 +144,13 @@ class CategoryListViewController: UIViewController ,UITableViewDataSource, UITab
         
         self.navigationController?.pushViewController(pc, animated: true)
     }
-
+    
     @IBAction func searchButtonTapped(sender: AnyObject) {
         let ud = NSUserDefaults.standardUserDefaults()
         
-        ud.setObject(generateStatus.selectedSegmentIndex, forKey: Const.generationId)
-        ud.setObject(userGenerateValue, forKey: Const.genderId)
+        ud.setObject(generateStatus.selectedSegmentIndex + 1, forKey: Const.genderId)
+        ud.setObject(userGenerateValue, forKey: Const.generationId)
         
-        
+        initializeTheCategoires()
     }
 }
