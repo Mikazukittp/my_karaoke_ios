@@ -9,10 +9,10 @@
 import UIKit
 
 class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDelegate{
-
+    
     let generateStr = ["10代", "20代", "30代"]
     let generateValue = [1,2,3]
-    var userGenerateValue :Int?
+    var userGenerateValue = 1
     
     var toolBar: UIToolbar!
     
@@ -21,7 +21,7 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
     @IBOutlet weak var userGenerationInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
@@ -30,12 +30,13 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         let _singleTap = UITapGestureRecognizer(target: self, action: "screenTapped:");
         _singleTap.numberOfTapsRequired = 1;
         view.addGestureRecognizer(_singleTap);
-
+        
         var pickerView = UIPickerView()
         pickerView.showsSelectionIndicator = true
         pickerView.delegate = self
         
         userGenerationInput.inputView = pickerView
+        userGenerationInput.text = "10代"
         
         toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
         toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
@@ -48,7 +49,7 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         toolBar.items = [toolBarBtn]
         
         userGenerationInput.inputAccessoryView = toolBar
-    
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
@@ -68,7 +69,7 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
     func tappedToolBarBtn(sender: UIBarButtonItem) {
         userGenerationInput.resignFirstResponder()
     }
-
+    
     @IBAction func registButtonTapped(sender: AnyObject) {
         
         let ud = NSUserDefaults.standardUserDefaults()
@@ -77,7 +78,7 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         if userId == nil {
             
             let fetcher = RegistFetcher()
-            fetcher.regist(userNameTextInput.text, userSex: userStatusBar.selectedSegmentIndex + 1, userGeneration: userGenerateValue!, successBlock: { () -> Void in
+            fetcher.regist(userNameTextInput.text, userSex: userStatusBar.selectedSegmentIndex + 1, userGeneration: userGenerateValue, successBlock: { () -> Void in
                 
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -92,7 +93,7 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
             var pc = CategoryListViewController(nibName: "CategoryListViewController", bundle: nil)
             self.navigationController?.pushViewController(pc, animated: true)
         }
-
+        
     }
     
     

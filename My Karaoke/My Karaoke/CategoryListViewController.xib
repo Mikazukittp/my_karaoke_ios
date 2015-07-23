@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -9,6 +8,7 @@
             <connections>
                 <outlet property="generateStatus" destination="3AR-5I-OAf" id="daQ-Kv-HjQ"/>
                 <outlet property="generationTextInput" destination="Yv1-Fl-gxs" id="ONj-PX-et3"/>
+                <outlet property="indicator" destination="EaT-Br-zC1" id="16l-QO-H0C"/>
                 <outlet property="tableView" destination="AWL-ie-8qv" id="z3s-Ja-J25"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -58,6 +58,9 @@
                         <constraint firstAttribute="height" constant="1" id="3Lo-XS-9Ik"/>
                     </constraints>
                 </view>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-Br-zC1">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -68,9 +71,11 @@
                 <constraint firstItem="AWL-ie-8qv" firstAttribute="top" secondItem="3AR-5I-OAf" secondAttribute="bottom" constant="5" id="CVM-vS-94P"/>
                 <constraint firstItem="AWL-ie-8qv" firstAttribute="top" secondItem="Wf0-zw-aLM" secondAttribute="bottom" constant="3" id="Fwg-J8-mR6"/>
                 <constraint firstItem="3AR-5I-OAf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ImZ-s9-C0k"/>
+                <constraint firstAttribute="centerY" secondItem="EaT-Br-zC1" secondAttribute="centerY" id="LAu-Vz-a5A"/>
                 <constraint firstAttribute="trailing" secondItem="FzU-Io-ins" secondAttribute="trailing" constant="20" id="O4F-Rw-T2M"/>
                 <constraint firstAttribute="trailing" secondItem="AWL-ie-8qv" secondAttribute="trailing" id="PxL-RJ-3YW"/>
                 <constraint firstItem="FzU-Io-ins" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="aIr-ft-QWZ"/>
+                <constraint firstAttribute="centerX" secondItem="EaT-Br-zC1" secondAttribute="centerX" id="cvx-uk-7ru"/>
                 <constraint firstItem="FzU-Io-ins" firstAttribute="top" secondItem="3AR-5I-OAf" secondAttribute="bottom" constant="10" id="hgo-pr-5hO"/>
                 <constraint firstItem="AWL-ie-8qv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="kPP-2e-XJM"/>
                 <constraint firstItem="Wf0-zw-aLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nEu-SV-s46"/>

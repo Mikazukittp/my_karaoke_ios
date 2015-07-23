@@ -14,6 +14,7 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
     var category = Int()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +25,26 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
         var nib  = UINib(nibName: "SongTableCell", bundle:nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier:"SongTableCell")
 
-        self.initializeTheCategoires()
+        self.initializeTheSongs()
         
     }
 
-    func initializeTheCategoires() {
+    func initializeTheSongs() {
+        
+        self.indicatorStart()
+        
         let fetcher = SongFetcher()
         fetcher.list(category, successBlock: { (items) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.songs = items
                 self.tableView.reloadData()
+                self.indicatorStop()
             })
         }) { (error) -> Void in
-            
+           
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.indicatorStop()
+            })
         }
 }
 
@@ -81,8 +89,16 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
         
         self.navigationController?.pushViewController(pc, animated: true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-
-        
     }
+    
+    private func indicatorStart () {
+        self.indicator.hidden = false
+        self.indicator.startAnimating()
+    }
+    private func indicatorStop () {
+        self.indicator.hidden = true
+        self.indicator.stopAnimating()
+    }
+
 
 }
