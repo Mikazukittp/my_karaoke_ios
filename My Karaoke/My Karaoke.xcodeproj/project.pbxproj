@@ -31,6 +31,8 @@
 		83E5DDA71B5BE56F00189D64 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5DDA61B5BE56F00189D64 /* Const.swift */; };
 		842AD80B290394F92F352EEF /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDEFD71E019074230DAD5467 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		9D68410D1B6120FF0084413D /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 9D68410C1B6120FF0084413D /* YTPlayer.html */; };
+		9D6841131B6144EB0084413D /* SongDetailFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6841121B6144EB0084413D /* SongDetailFetcher.swift */; };
+		9D6841151B6144F90084413D /* SongDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6841141B6144F90084413D /* SongDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,7 @@
 /* Begin PBXFileReference section */
 		783C5C70CDF37E709EEA9A42 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7C1892F97C798291B24DC28A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8326E32D1B5A3E8C00925579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8326E32D1B5A3E8C00925579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8326E32E1B5A3E8C00925579 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		83B4B65A1B5FE10E0095769E /* SongFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongFetcher.swift; sourceTree = "<group>"; };
 		83BB8D661B5A195A00C97B32 /* My Karaoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Karaoke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,8 @@
 		83E5DDA31B5BD42800189D64 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		83E5DDA61B5BE56F00189D64 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		9D68410C1B6120FF0084413D /* YTPlayer.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YTPlayer.html; sourceTree = "<group>"; };
+		9D6841121B6144EB0084413D /* SongDetailFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetailFetcher.swift; sourceTree = "<group>"; };
+		9D6841141B6144F90084413D /* SongDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetail.swift; sourceTree = "<group>"; };
 		BDEFD71E019074230DAD5467 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,6 +187,7 @@
 		83BB8D931B5A27A800C97B32 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				9D6841141B6144F90084413D /* SongDetail.swift */,
 				83BB8D941B5A285400C97B32 /* Category.swift */,
 				83BB8DB01B5A38F200C97B32 /* Song.swift */,
 			);
@@ -226,6 +231,7 @@
 		83E56C391B5E9CC3003DE02E /* Fetcher */ = {
 			isa = PBXGroup;
 			children = (
+				9D6841121B6144EB0084413D /* SongDetailFetcher.swift */,
 				83E56C3A1B5E9CCB003DE02E /* BaseFetcher.swift */,
 				83E56C3C1B5E9CD3003DE02E /* CategoryFetcher.swift */,
 				83E56C3E1B5E9CDC003DE02E /* RegistFetcher.swift */,
@@ -418,8 +424,10 @@
 				83BB8DB31B5A3B1C00C97B32 /* SongTableCell.swift in Sources */,
 				83E56C3D1B5E9CD3003DE02E /* CategoryFetcher.swift in Sources */,
 				83BB8D9B1B5A2FDD00C97B32 /* CategoryTableCell.swift in Sources */,
+				9D6841151B6144F90084413D /* SongDetail.swift in Sources */,
 				83BB8DAE1B5A384F00C97B32 /* SongListViewController.swift in Sources */,
 				8326E32F1B5A3E8C00925579 /* DetailViewController.swift in Sources */,
+				9D6841131B6144EB0084413D /* SongDetailFetcher.swift in Sources */,
 				83E5DDA71B5BE56F00189D64 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

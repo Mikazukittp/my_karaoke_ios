@@ -18,13 +18,23 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "YouTube Movie"
         
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=wQg3bXrVLtg")
-        playerView.loadVideoURL(myVideoURL!)
+        
+        let fetcher = SongDetailFetcher()
+        fetcher.getUrl(song!.id, successBlock: { (item) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=wQg3bXrVLtg")
+                self.title = item.title
+                let myVideoURL = NSURL(string: item.url)
+                self.playerView.loadVideoURL(myVideoURL!)
+            })
+            }) { (error) -> Void in
+                
+        }
+        
     }
     
     @IBAction func play(sender: UIButton) {
