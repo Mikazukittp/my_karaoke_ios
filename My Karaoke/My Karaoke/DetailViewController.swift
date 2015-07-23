@@ -14,46 +14,29 @@ class DetailViewController: UIViewController {
     var song: Song?
     
     @IBOutlet weak var playerView: YouTubePlayerView!
-    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var likeLabel: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "YouTube Movie"
         
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=wQg3bXrVLtg")
-        playerView.loadVideoURL(myVideoURL!)
-    }
-    
-    @IBAction func play(sender: UIButton) {
-        if playerView.ready {
-            if playerView.playerState != YouTubePlayerState.Playing {
-                playerView.play()
-                playButton.setTitle("Pause", forState: .Normal)
-            } else {
-                playerView.pause()
-                playButton.setTitle("Play", forState: .Normal)
-            }
+        
+        let fetcher = SongDetailFetcher()
+        fetcher.getUrl(song!.id, successBlock: { (item) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.title = item.title
+                self.likeLabel.text = "歌いたい : " + self.song!.like.description
+                
+                let myVideoURL = NSURL(string: item.url)
+                self.playerView.loadVideoURL(myVideoURL!)
+            })
+            }) { (error) -> Void in
+                
         }
-    }
-    
-    @IBAction func prev(sender: UIButton) {
-        playerView.previousVideo()
-    }
-    
-    @IBAction func next(sender: UIButton) {
-        playerView.nextVideo()
-    }
-    
-    @IBAction func loadVideo(sender: UIButton) {
-        playerView.playerVars = ["playsinline": "1"]
-        playerView.loadVideoID("wQg3bXrVLtg")
-    }
-    
-    @IBAction func loadPlaylist(sender: UIButton) {
-        playerView.loadPlaylistID("RDe-ORhEE9VVg")
+        
     }
     
     func showAlert(message: String) {
