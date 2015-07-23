@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="My_Karaoke" customModuleProvider="target">
             <connections>
+                <outlet property="indicator" destination="cut-WI-h6N" id="Iec-uS-fX8"/>
                 <outlet property="likeLabel" destination="INU-Xr-y3B" id="7c0-VO-dCR"/>
                 <outlet property="playerView" destination="YkA-As-t55" id="b8h-Cp-byr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,18 +25,34 @@
                         <constraint firstAttribute="width" secondItem="YkA-As-t55" secondAttribute="height" multiplier="16:9" id="wD4-mf-Mis"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="歌いたい : -" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INU-Xr-y3B">
-                    <rect key="frame" x="255" y="440" width="90" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歌いたい : -" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INU-Xr-y3B">
+                    <rect key="frame" x="255" y="437" width="89.5" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cut-WI-h6N">
+                    <rect key="frame" x="290" y="290" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="AzG-Ug-3C6"/>
+                        <constraint firstAttribute="width" constant="100" id="iF7-nw-hiS"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="AzG-Ug-3C6"/>
+                            <exclude reference="iF7-nw-hiS"/>
+                        </mask>
+                    </variation>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="INU-Xr-y3B" secondAttribute="centerX" id="2m3-Lf-hKc"/>
+                <constraint firstAttribute="centerY" secondItem="cut-WI-h6N" secondAttribute="centerY" id="Bid-gJ-f95"/>
                 <constraint firstItem="YkA-As-t55" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DKl-Tj-ZrO"/>
+                <constraint firstItem="INU-Xr-y3B" firstAttribute="top" secondItem="YkA-As-t55" secondAttribute="bottom" constant="100" id="SKY-o7-tQ3"/>
                 <constraint firstItem="YkA-As-t55" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qKL-v1-sXI"/>
+                <constraint firstAttribute="centerX" secondItem="cut-WI-h6N" secondAttribute="centerX" id="yxw-50-D0H"/>
                 <constraint firstAttribute="trailing" secondItem="YkA-As-t55" secondAttribute="trailing" id="zAo-6e-4ss"/>
             </constraints>
         </view>

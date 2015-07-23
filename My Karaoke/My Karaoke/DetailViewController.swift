@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var playerView: YouTubePlayerView!
     @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 
 
     override func viewDidLoad() {
@@ -23,20 +24,24 @@ class DetailViewController: UIViewController {
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
+        self.indicatorStart()
         
         let fetcher = SongDetailFetcher()
         fetcher.getUrl(song!.id, successBlock: { (item) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.title = item.title
                 self.likeLabel.text = "歌いたい : " + self.song!.like.description
-                
+               
                 let myVideoURL = NSURL(string: item.url)
                 self.playerView.loadVideoURL(myVideoURL!)
+                self.indicatorStop()
             })
-            }) { (error) -> Void in
-                
+        }) { (error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.indicatorStop()
+            })
+    
         }
-        
     }
     
     func showAlert(message: String) {
@@ -49,9 +54,14 @@ class DetailViewController: UIViewController {
         
         return alertController
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    private func indicatorStart () {
+        self.indicator.hidden = false
+        self.indicator.startAnimating()
     }
+    private func indicatorStop () {
+        self.indicator.hidden = true
+        self.indicator.stopAnimating()
+    }
+
 }
