@@ -26,6 +26,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2eL-oI-PQJ"/>
                     </constraints>
+                    <color key="textColor" red="0.066666666669999999" green="0.2901960784" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -43,10 +44,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kCr-l4-qYf">
-                    <rect key="frame" x="100" y="214" width="60" height="31"/>
+                    <rect key="frame" x="100" y="214" width="200" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="3x9-oX-ymV"/>
-                        <constraint firstAttribute="width" constant="60" id="zPU-eF-T2X"/>
+                        <constraint firstAttribute="width" constant="200" id="zPU-eF-T2X"/>
                     </constraints>
                     <segments>
                         <segment title="男"/>
@@ -73,6 +74,7 @@
                         <constraint firstAttribute="width" constant="200" id="aI3-I0-IGD"/>
                         <constraint firstAttribute="height" constant="30" id="geY-cK-CdI"/>
                     </constraints>
+                    <color key="textColor" red="0.066666666669999999" green="0.2901960784" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -92,7 +94,7 @@
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="登録する">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
                         <action selector="registButtonTapped:" destination="-1" eventType="touchUpInside" id="wBq-vm-xfx"/>

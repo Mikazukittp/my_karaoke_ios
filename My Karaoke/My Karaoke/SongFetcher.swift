@@ -43,8 +43,10 @@ class SongFetcher: BaseFetcher {
                     let id = anItem.objectForKey("id") as? Int
                     let title = anItem.objectForKey("title") as? String
                     let like = anItem.objectForKey("like") as? Int
+                    let artist = anItem.objectForKey("artist") as? NSDictionary
+                    let artistName = artist?.objectForKey("name") as? String
 
-                    var entity = Song(title :title!,id :id!,like :like!)
+                    var entity = Song(title :title!,id :id!,like :like!,artistName :artistName!)
                     songs.append(entity)
                 }
                 

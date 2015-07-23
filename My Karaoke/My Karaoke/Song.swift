@@ -12,4 +12,5 @@ struct Song {
     let title: String
     let id: Int
     let like: Int
+    let artistName :String
 }

@@ -31,8 +31,6 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         _singleTap.numberOfTapsRequired = 1;
         view.addGestureRecognizer(_singleTap);
 
-        
-        
         var pickerView = UIPickerView()
         pickerView.showsSelectionIndicator = true
         pickerView.delegate = self
@@ -71,7 +69,6 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         userGenerationInput.resignFirstResponder()
     }
 
-    
     @IBAction func registButtonTapped(sender: AnyObject) {
         
         let ud = NSUserDefaults.standardUserDefaults()

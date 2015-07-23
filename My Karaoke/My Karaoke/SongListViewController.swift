@@ -50,7 +50,8 @@ class SongListViewController: UIViewController,UITableViewDataSource, UITableVie
             cell = SongTableCell(style: UITableViewCellStyle.Value1, reuseIdentifier: identifier)
         }
         
-        cell!.nameLabel!.text = songs[indexPath.row].title
+        cell!.nameLabel!.text = "\(indexPath.row+1). " + songs[indexPath.row].title
+        cell!.artistName!.text = songs[indexPath.row].artistName
         
         return cell!
     }
