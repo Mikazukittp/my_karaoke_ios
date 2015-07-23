@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import YouTubePlayer
 
 class DetailViewController: UIViewController {
     
     var song: Song?
     
-    @IBOutlet weak var detailView: UIView!
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var playerView: YouTubePlayerView!
+    @IBOutlet weak var playButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "YouTube Movie"
@@ -21,23 +23,52 @@ class DetailViewController: UIViewController {
         //Naviagationbar潜り込み防止
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        self.setMovie()
-        self.setDetail()
+        let myVideoURL = NSURL(string: "https://www.youtube.com/watch?v=wQg3bXrVLtg")
+        playerView.loadVideoURL(myVideoURL!)
     }
     
-    private func setMovie () {
-        
-        var url = NSURL(string: song!.url)
-        var urlRequest: NSURLRequest = NSURLRequest(URL: url!)
-        self.webView.allowsInlineMediaPlayback = true;
-        self.webView.loadRequest(urlRequest)
+    @IBAction func play(sender: UIButton) {
+        if playerView.ready {
+            if playerView.playerState != YouTubePlayerState.Playing {
+                playerView.play()
+                playButton.setTitle("Pause", forState: .Normal)
+            } else {
+                playerView.pause()
+                playButton.setTitle("Play", forState: .Normal)
+            }
+        }
     }
     
-    private func setDetail () {
-        detailView.layer.borderWidth = 1.0
-        detailView.layer.borderColor = UIColor(red: 0.475, green: 0.620, blue: 0.620, alpha: 1.0).CGColor
-        detailView.layer.cornerRadius = 3.0
-        
+    @IBAction func prev(sender: UIButton) {
+        playerView.previousVideo()
     }
-
+    
+    @IBAction func next(sender: UIButton) {
+        playerView.nextVideo()
+    }
+    
+    @IBAction func loadVideo(sender: UIButton) {
+        playerView.playerVars = ["playsinline": "1"]
+        playerView.loadVideoID("wQg3bXrVLtg")
+    }
+    
+    @IBAction func loadPlaylist(sender: UIButton) {
+        playerView.loadPlaylistID("RDe-ORhEE9VVg")
+    }
+    
+    func showAlert(message: String) {
+        self.presentViewController(alertWithMessage(message), animated: true, completion: nil)
+    }
+    
+    func alertWithMessage(message: String) -> UIAlertController {
+        let alertController =  UIAlertController(title: "", message: message, preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        
+        return alertController
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
