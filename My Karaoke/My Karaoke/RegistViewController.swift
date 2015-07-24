@@ -50,6 +50,10 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         
         userGenerationInput.inputAccessoryView = toolBar
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButtonItem
+
+        
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int {
@@ -74,6 +78,12 @@ class RegistViewController: UIViewController ,UIPickerViewDelegate,UIToolbarDele
         
         let ud = NSUserDefaults.standardUserDefaults()
         var userId : AnyObject! = ud.objectForKey(Const.userToken)
+        
+        if userNameTextInput.text == "" {
+            userNameTextInput.attributedPlaceholder = NSAttributedString(string:"名前を設定してください",
+                attributes:[NSForegroundColorAttributeName: UIColor.redColor()])
+            return;
+        }
         
         if userId == nil {
             
